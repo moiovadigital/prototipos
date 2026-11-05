@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos — AEL · Academia Erechinense de Letras</title>
+    <meta name="description" content="Agenda cultural da Academia Erechinense de Letras: Café com Leitura mensal, Feira do Livro e ações da minibiblioteca Livro Livre. Protótipo.">
+    <link rel="icon" href="imagens/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html" aria-label="AEL — página inicial">
+                <img src="imagens/logo.png" alt="Brasão da Academia Erechinense de Letras">
+                <div>
+                    <strong>AEL</strong>
+                    <span>Academia Erechinense de Letras</span>
+                </div>
+            </a>
+            <nav class="main-nav" aria-label="Navegação principal">
+                <a href="index.html">Início</a>
+                <a href="academicos.html">Acadêmicos</a>
+                <a href="eventos.html" aria-current="page">Eventos</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+            <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+        </div>
+        <nav class="mobile-menu" id="mobileMenu" aria-label="Menu móvel">
+            <a href="index.html">Início</a>
+            <a href="academicos.html">Acadêmicos</a>
+            <a href="eventos.html" aria-current="page">Eventos</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <main id="conteudo">
+        <section class="page-hero">
+            <span class="kicker">EVENTOS</span>
+            <h1>Agenda cultural da AEL</h1>
+            <p>Do Café com Leitura mensal à Feira do Livro: os encontros que movem a literatura em Erechim. Dados provisórios deste protótipo.</p>
+            <div class="filters" role="group" aria-label="Filtrar eventos por categoria">
+                <button class="chip" type="button" data-tipo="todos" aria-pressed="true">Todos</button>
+                <button class="chip" type="button" data-tipo="cafe" aria-pressed="false">Café com Leitura</button>
+                <button class="chip" type="button" data-tipo="feira" aria-pressed="false">Feiras</button>
+                <button class="chip" type="button" data-tipo="acao" aria-pressed="false">Ações</button>
+                <button class="chip" type="button" data-tipo="posse" aria-pressed="false">Posse</button>
+            </div>
+        </section>
+
+        <section class="content" aria-label="Lista de eventos">
+            <div class="event-list" id="listaEventos"></div>
+        </section>
+
+        <template id="notaConteudo">
+            <span class="panel-kicker">Nota oficial · 27ª Feira do Livro de Erechim</span>
+            <h4 class="panel-title">Academia Erechinense de Letras prestigia a 27ª Feira do Livro de Erechim</h4>
+            <p>A 27ª Feira do Livro de Erechim teve sua abertura oficial em 1º de maio, na Praça Prefeito Jayme Lago, reafirmando o compromisso do município com a promoção da leitura, a valorização da literatura e o fortalecimento da vida cultural da comunidade.</p>
+            <p>Sob o tema <strong>“Jardim do Quintana”</strong>, a edição homenageia os 120 anos de nascimento de Mario Quintana e reúne, ao longo de dez dias, autores, leitores, artistas, instituições e representantes da sociedade em uma programação dedicada à literatura e às diferentes manifestações culturais.</p>
+            <p>A feira tem como patrono o Dr. Alcides Mandelli Stumpf e presta homenagem a Cesar Tadeu Stanisçuaski, reconhecendo contribuições relevantes para a cultura e a identidade local. A solenidade de abertura contou com a presença de autoridades municipais, representantes de instituições culturais, educacionais e apoiadores do evento.</p>
+            <p>Entre as iniciativas da programação, destaca-se o lançamento do livro <em>O Jornaleiro de Erechim: conhecendo nossa cidade</em>, publicação que contribui para a preservação da memória e para o conhecimento da história do município, aproximando as novas gerações de suas referências culturais.</p>
+            <p>A <strong>Academia Erechinense de Letras</strong> reconhece a importância da Feira do Livro como espaço de encontro entre escritores e leitores, de circulação do conhecimento e de incentivo à formação de novos públicos para a literatura. Eventos dessa natureza fortalecem o ambiente literário, promovem o diálogo entre gerações e reafirmam o papel da cultura na construção da identidade de uma comunidade.</p>
+            <p>A realização da 27ª Feira do Livro de Erechim constitui, assim, uma oportunidade de celebrar a palavra escrita, valorizar a produção intelectual e ampliar o acesso da população aos livros e às atividades culturais.</p>
+            <p>A programação ocorre de 1º a 10 de maio, com atividades destinadas a diferentes faixas etárias. O projeto conta com financiamento do Pró-Cultura RS e da Secretaria de Estado da Cultura do Rio Grande do Sul.</p>
+            <p class="panel-signature"><strong>Academia Erechinense de Letras</strong><br><em>Literatura, memória e compromisso com a cultura.</em></p>
+        </template>
+    </main>
+
+    <footer class="site-footer">
+        <h3>Academia Erechinense de Letras</h3>
+        <div class="footer-links">
+            <a href="index.html">Início</a>
+            <a href="academicos.html">Acadêmicos</a>
+            <a href="eventos.html">Eventos</a>
+            <a href="contato.html">Contato</a>
+        </div>
+        <div class="social">
+            <a href="https://www.facebook.com/AELErechim/" target="_blank" rel="noopener" aria-label="Facebook da AEL">f</a>
+        </div>
+        <p class="legal">© <span id="ano">2026</span> AEL — Academia Erechinense de Letras · Protótipo (conteúdo provisório)</p>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>

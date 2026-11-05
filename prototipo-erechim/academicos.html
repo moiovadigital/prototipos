@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acadêmicos — AEL · Academia Erechinense de Letras</title>
+    <meta name="description" content="Galeria das 33 cadeiras da Academia Erechinense de Letras. Protótipo de site institucional.">
+    <link rel="icon" href="imagens/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html" aria-label="AEL — página inicial">
+                <img src="imagens/logo.png" alt="Brasão da Academia Erechinense de Letras">
+                <div>
+                    <strong>AEL</strong>
+                    <span>Academia Erechinense de Letras</span>
+                </div>
+            </a>
+            <nav class="main-nav" aria-label="Navegação principal">
+                <a href="index.html">Início</a>
+                <a href="academicos.html" aria-current="page">Acadêmicos</a>
+                <a href="eventos.html">Eventos</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+            <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+        </div>
+        <nav class="mobile-menu" id="mobileMenu" aria-label="Menu móvel">
+            <a href="index.html">Início</a>
+            <a href="academicos.html" aria-current="page">Acadêmicos</a>
+            <a href="eventos.html">Eventos</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <main id="conteudo">
+        <section class="page-hero">
+            <span class="kicker">ACADÊMICOS</span>
+            <h1>Trinta e três cadeiras</h1>
+            <p>Galeria institucional da AEL. Os nomes oficiais dos acadêmicos serão publicados após validação com a gestão — este protótipo já reserva uma ficha para cada cadeira.</p>
+            <div class="filters">
+                <label class="visually-hidden" for="filtroAcademicos">Filtrar acadêmicos por nome</label>
+                <input id="filtroAcademicos" type="search" placeholder="Filtrar por nome…" style="max-width:320px">
+            </div>
+            <p id="contador" class="center" style="margin-top:14px;color:var(--dourado-brilho);font-size:.82rem" aria-live="polite">33 cadeiras</p>
+        </section>
+
+        <section class="content" aria-label="Galeria de acadêmicos">
+            <div class="cards" id="gridAcademicos"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <h3>Academia Erechinense de Letras</h3>
+        <div class="footer-links">
+            <a href="index.html">Início</a>
+            <a href="academicos.html">Acadêmicos</a>
+            <a href="eventos.html">Eventos</a>
+            <a href="contato.html">Contato</a>
+        </div>
+        <div class="social">
+            <a href="https://www.facebook.com/AELErechim/" target="_blank" rel="noopener" aria-label="Facebook da AEL">f</a>
+        </div>
+        <p class="legal">© <span id="ano">2026</span> AEL — Academia Erechinense de Letras · Protótipo (conteúdo provisório)</p>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>
