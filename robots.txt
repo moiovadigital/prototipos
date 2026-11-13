@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prototipos.moiovadigital.com.br/sitemap.xml
