@@ -768,6 +768,9 @@ body::before{
 .footer-bottom{border-top:1px solid rgba(142,182,155,.2);padding:1.3rem 0}
 .footer-bottom .container{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
 .footer-bottom p{margin:0;font-size:.8rem;color:rgba(233,246,236,.6);max-width:56rem;letter-spacing:.02em}
+/* crédito da agência no rodapé — sálvia sobre o fundo escuro = 7,5:1 (AA) */
+.footer-bottom a{color:#8EB69B;text-decoration:underline;text-underline-offset:2px}
+.footer-bottom a:hover,.footer-bottom a:focus-visible{color:var(--ouro-500)}
 .footer-legal{font-size:.78rem;color:rgba(233,246,236,.58);line-height:1.7;margin:.6rem 0 0}
 
 .fab-top{
