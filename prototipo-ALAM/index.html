@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALAM — Academia de Letras de Águas Mornas · literatura e memória</title>
+<meta name="description" content="Site institucional da Academia de Letras de Águas Mornas. Fundada em 22 de setembro de 2018, em Águas Mornas — SC. Acadêmicos, publicações, eventos e notícias.">
+<meta name="theme-color" content="#051F20">
+<meta property="og:title" content="ALAM — Academia de Letras de Águas Mornas">
+<meta property="og:description" content="Guardiã das Letras e da memória. Fundada em 22 de setembro de 2018, em Águas Mornas — SC.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<link rel="canonical" href="https://prototipos.moiovadigital.com.br/prototipo-ALAM/">
+<meta property="og:url" content="https://prototipos.moiovadigital.com.br/prototipo-ALAM/">
+<meta property="og:site_name" content="ALAM — Academia de Letras de Águas Mornas">
+<meta property="og:image" content="https://prototipos.moiovadigital.com.br/prototipo-ALAM/img/og-alam.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="Brasão da Academia de Letras de Águas Mornas com o lema Guardiã das Letras e da memória.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ALAM — Academia de Letras de Águas Mornas · literatura e memória">
+<meta name="twitter:description" content="Site institucional da Academia de Letras de Águas Mornas. Fundada em 22 de setembro de 2018, em Águas Mornas — SC. Acadêmicos, publicações, eventos e notícias.">
+<meta name="twitter:image" content="https://prototipos.moiovadigital.com.br/prototipo-ALAM/img/og-alam.jpg">
+
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" as="image" type="image/webp" href="img/logo-alam-quadrado.webp" media="(min-width:769px)" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="img/logo-alam-quadrado-640.webp" media="(max-width:768px)" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="img/hero-768.webp" media="(max-width:768px)" fetchpriority="high">
+<style>
+/* =========================================================
+   CSS CRITICO - embutido no <head> de cada pagina
+   Gerado de css/styles.css: tokens, reset, cabecalho, hero,
+   botoes, cabecalho de pagina interna, revelacao, flutuante.
+   O restante de styles.css carrega sem bloquear (preload).
+   ========================================================= */
+
+/* =========================================================
+   ALAM — Academia de Letras de Águas Mornas
+   Site institucional · protótipo
+   Direção de arte: referências 05/06/07 da pasta referencia-visual
+   Base escura dominante, painéis sobrepostos (sem faixas alternadas),
+   retratos em moldura dourada, composições assimétricas por página.
+   Paleta: ALAM-paleta de cores.png + ouro do brasão apenas como acento.
+   Tipografia: pilha de fontes do sistema (sem dependência externa).
+   ========================================================= */
+
+:root{
+  /* ---- Paleta ALAM (referencia-visual/ALAM-paleta de cores.png) ---- */
+  --verde-950:#051F20;   /* profundidade: hero, rodapé, cabeçalho */
+  --verde-900:#0B2B26;   /* base das páginas */
+  --verde-800:#163832;   /* painéis */
+  --verde-700:#235347;   /* blocos de destaque, botões */
+  --salvia:#8EB69B;      /* texto secundário, versaletes */
+  --menta:#E9F6EC;       /* texto claro e painéis claros (estimado do swatch) */
+
+  /* ---- Ouro do brasão: filete, moldura, versaletes, 1 destaque/página ---- */
+  --ouro-500:#C4A05A;
+  --ouro-700:#8A6514;    /* ouro escuro — só sobre fundo claro (AA) */
+
+  /* ---- Semântica ---- */
+  --cor-fundo:var(--verde-900);
+  --cor-texto:var(--menta);
+  --cor-suave:var(--salvia);
+
+  /* ---- Tipografia (sistema, 2 famílias) ---- */
+  --fonte-titulo:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua","Times New Roman",serif;
+  --fonte-texto:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --texto-base:clamp(1rem,.97rem + .16vw,1.0625rem);
+  --linha-leitura:1.72;
+  --medida-leitura:66ch;
+
+  /* ---- Espaço e layout ---- */
+  --container:1180px;
+  --raio:3px;
+  --raio-sm:2px;
+  --header-h:76px;
+
+  /* ---- Filetes ---- */
+  --filete-ouro:1px solid rgba(196,160,90,.55);
+  --filete-tenue:1px solid rgba(142,182,155,.22);
+  --sombra-1:0 1px 2px rgba(0,0,0,.28);
+  --sombra-2:0 18px 44px rgba(0,0,0,.42);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+/* ---------- Reset ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 16px)}
+body{
+  margin:0;
+  font-family:var(--fonte-texto);
+  font-size:var(--texto-base);
+  line-height:var(--linha-leitura);
+  color:var(--cor-texto);
+  background:var(--cor-fundo);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3,h4{
+  font-family:var(--fonte-titulo);
+  font-weight:400;
+  line-height:1.14;
+  letter-spacing:-.012em;
+  margin:0 0 .5em;
+  color:var(--menta);
+}
+p{margin:0 0 1em}
+a{color:var(--salvia);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+ul,ol{margin:0;padding:0;list-style:none}
+button,input,select,textarea{font:inherit;color:inherit}
+svg.icon{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+:focus-visible{outline:3px solid var(--ouro-500);outline-offset:3px;border-radius:2px}
+
+/* Papel de fundo do site inteiro (background.jpg)
+   Opacity .28 sobre --verde-950 mantém o texto AA:
+   sálvia sobre o composto ≈ 6:1, menta ≈ 14:1 */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:url("../img/background.webp") center / cover no-repeat;
+  opacity:.28;
+}
+@media (max-width:768px){
+  body::before{background-image:url("../img/background-768.webp")}
+}
+
+.container{width:min(100% - 2.5rem,var(--container));margin-inline:auto}
+
+.skip-link{
+  position:absolute;left:1rem;top:-100px;z-index:200;
+  background:var(--ouro-500);color:var(--verde-950);
+  padding:.75rem 1.25rem;border-radius:0 0 var(--raio) var(--raio);
+  font-size:.9rem;font-weight:600;letter-spacing:.04em;
+  transition:top .2s var(--ease);
+}
+.skip-link:focus{top:0}
+.skip-link:focus-visible{outline-color:var(--verde-950)}
+
+/* ---------- Tipografia de apoio ---------- */
+.lead{font-size:clamp(1.05rem,1.5vw,1.18rem);line-height:1.68;color:var(--menta)}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.8rem;
+  font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.26em;
+  color:var(--salvia);margin-bottom:1.1rem;
+}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--ouro-500);flex:none}
+.eyebrow-gold{color:var(--ouro-500)}
+
+.section{padding:clamp(3.8rem,7vw,6rem) 0}
+.section + .section{border-top:var(--filete-tenue)}
+
+.section-head{max-width:46rem;margin-bottom:clamp(2rem,4vw,3rem)}
+.section-head h2{font-size:clamp(1.8rem,3.6vw,2.7rem);margin-bottom:.5rem}
+.section-lead{font-size:1.04rem;color:var(--salvia);max-width:44rem;margin:0}
+
+.subhead{margin:clamp(2.4rem,5vw,3.4rem) 0 1.3rem}
+.subhead h3{font-size:1.45rem;margin:0}
+
+/* Filete divisório discreto */
+.rule{height:1px;background:var(--filete-tenue);border:0;margin:clamp(2rem,4vw,3rem) 0}
+.rule-ouro{background:linear-gradient(90deg,rgba(196,160,90,.75),rgba(196,160,90,0))}
+
+/* Ornamento: filete + losango dourado */
+.ornament{
+  display:flex;align-items:center;justify-content:center;gap:.85rem;
+  color:var(--ouro-500);margin:clamp(1.6rem,3vw,2.4rem) 0;
+}
+.ornament::before,.ornament::after{
+  content:"";height:1px;width:clamp(48px,10vw,110px);
+  background:linear-gradient(90deg,transparent,currentColor);
+}
+.ornament::after{background:linear-gradient(270deg,transparent,currentColor)}
+.ornament span{width:7px;height:7px;background:currentColor;transform:rotate(45deg);flex:none}
+
+/* Moldura dourada (retratos, convites, fotografias) */
+.frame{
+  margin:0;background:var(--verde-800);
+  padding:8px;border:var(--filete-ouro);box-shadow:var(--sombra-2);
+}
+.frame img{width:100%;display:block}
+.frame figcaption{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--salvia);padding:.7rem .3rem .2rem;text-align:center}
+
+/* ---------- Botões ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  min-height:48px;padding:.78rem 1.6rem;border-radius:var(--raio);
+  font-family:var(--fonte-texto);font-weight:600;font-size:.9rem;
+  letter-spacing:.045em;line-height:1.2;
+  border:1px solid transparent;cursor:pointer;text-align:center;
+  transition:background-color .2s var(--ease),color .2s var(--ease),
+             border-color .2s var(--ease),transform .2s var(--ease);
+}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+
+.btn-ouro{background:var(--ouro-500);color:var(--verde-950);border-color:var(--ouro-500)}
+.btn-ouro:hover{background:#D6B673;border-color:#D6B673;color:var(--verde-950)}
+
+.btn-menta{background:var(--menta);color:var(--verde-950);border-color:var(--menta)}
+.btn-menta:hover{background:#fff;border-color:#fff;color:var(--verde-950)}
+
+.btn-linha{background:transparent;color:var(--menta);border-color:rgba(196,160,90,.7)}
+.btn-linha:hover{background:rgba(196,160,90,.14);border-color:var(--ouro-500);color:var(--menta)}
+
+.btn-escuro{background:var(--verde-700);color:var(--menta);border-color:var(--verde-700)}
+.btn-escuro:hover{background:#2B6153;border-color:#2B6153;color:#fff}
+
+.btn-sm{min-height:42px;padding:.55rem 1.15rem;font-size:.83rem;letter-spacing:.06em}
+.btn-block{width:100%}
+
+/* ---------- Cabeçalho ---------- */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(5,31,32,.96);
+  backdrop-filter:saturate(140%) blur(8px);
+  -webkit-backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid rgba(196,160,90,.35);
+  transition:box-shadow .25s var(--ease);
+}
+.site-header.is-stuck{box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:var(--header-h)}
+
+.brand{display:flex;align-items:center;gap:.75rem;color:var(--menta)}
+.brand:hover{text-decoration:none}
+.brand-mark{
+  width:50px;height:50px;border-radius:50%;object-fit:cover;
+  background:var(--menta);padding:3px;border:1px solid rgba(196,160,90,.7);
+}
+.brand-text{display:flex;flex-direction:column;line-height:1.2}
+.brand-text strong{font-family:var(--fonte-titulo);font-weight:400;font-size:1.4rem;letter-spacing:.1em;color:var(--menta)}
+.brand-text span{font-size:.65rem;text-transform:uppercase;letter-spacing:.16em;color:var(--salvia)}
+
+.nav{display:flex;align-items:center;gap:1.1rem}
+.nav-list{display:flex;align-items:center;gap:.15rem}
+
+/* Linha do item ativo (desktop) — sublinha aparece no hover e permanece no ativo */
+.nav-list a{
+  display:block;padding:.6rem .7rem;border-radius:var(--raio-sm);
+  font-size:.875rem;font-weight:500;letter-spacing:.02em;color:var(--menta);
+  position:relative;
+  transition:color .2s var(--ease);
+}
+.nav-list a::after{
+  content:"";position:absolute;left:.7rem;right:.7rem;bottom:.25rem;height:1.5px;
+  background:var(--ouro-500);border-radius:2px;
+  transform:scaleX(0);transform-origin:center;
+  transition:transform .25s var(--ease);
+}
+.nav-list a:hover{color:#fff;text-decoration:none}
+.nav-list a:hover::after,
+.nav-list a:focus-visible::after{transform:scaleX(1)}
+.nav-list a[aria-current="page"]{color:#fff;font-weight:600}
+.nav-list a[aria-current="page"]::after{transform:scaleX(1)}
+
+.nav-toggle{
+  display:none;width:46px;height:46px;align-items:center;justify-content:center;
+  background:transparent;border:1px solid rgba(142,182,155,.4);border-radius:var(--raio);
+  cursor:pointer;color:var(--menta);
+}
+.nav-toggle .icon{width:24px;height:24px}
+.nav-toggle .icon-close{display:none}
+.nav-toggle[aria-expanded="true"] .icon-menu{display:none}
+.nav-toggle[aria-expanded="true"] .icon-close{display:block}
+
+/* ---------- Hero (home) — assimétrico ---------- */
+.hero{
+  position:relative;isolation:isolate;overflow:hidden;
+  background:var(--verde-950);
+  padding:clamp(3.4rem,7vw,5.6rem) 0 clamp(3.6rem,7vw,5.8rem);
+}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:-2;
+  background:
+    radial-gradient(900px 520px at 12% 20%,rgba(35,83,71,.75),transparent 70%),
+    linear-gradient(180deg,rgba(5,31,32,.94),rgba(5,31,32,.99));
+}
+/* Hero com foto de fundo apenas no celular — a desktop mantém o fundo sólido */
+@media (max-width:768px){
+  .hero::before{
+    background:
+      radial-gradient(900px 520px at 12% 20%,rgba(35,83,71,.55),transparent 70%),
+      linear-gradient(180deg,rgba(5,31,32,.86),rgba(5,31,32,.92)),
+      url("../img/hero-768.webp") center / cover no-repeat;
+  }
+}
+.hero::after{
+  content:"";position:absolute;inset:clamp(.7rem,1.6vw,1.3rem);z-index:-1;
+  border:1px solid rgba(196,160,90,.28);pointer-events:none;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;
+  gap:clamp(2rem,5vw,4rem);align-items:center;
+}
+.hero h1{
+  font-size:clamp(2.3rem,5.4vw,3.9rem);font-weight:400;color:#fff;
+  margin-bottom:.7rem;letter-spacing:-.018em;
+}
+.hero-motto{
+  font-family:var(--fonte-titulo);font-style:italic;
+  font-size:clamp(1.15rem,2.2vw,1.5rem);color:var(--ouro-500);margin-bottom:1.3rem;
+}
+.hero-lead{max-width:34rem;color:rgba(233,246,236,.85);margin-bottom:2rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.9rem}
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin-top:2.2rem;
+  padding-top:1.4rem;border-top:var(--filete-tenue);
+  font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--salvia);
+}
+.hero-meta span{display:inline-flex;align-items:center;gap:.5rem}
+.hero-meta span::before{content:"";width:5px;height:5px;background:var(--ouro-500);transform:rotate(45deg)}
+
+.hero-copy{min-width:0}
+.hero-visual{position:relative;min-width:0}
+.hero-visual .frame{transform:translateY(-6px)}
+.hero-visual .frame img{aspect-ratio:1/1;object-fit:cover}
+
+/* ---------- Cabeçalho de página interna ---------- */
+.page-hero{
+  position:relative;isolation:isolate;overflow:hidden;
+  background:var(--verde-950);
+  padding:clamp(2.2rem,4.5vw,3.4rem) 0 clamp(2.2rem,4.5vw,3.2rem);
+  border-bottom:var(--filete-ouro);
+}
+.page-hero::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(700px 320px at 88% 10%,rgba(35,83,71,.7),transparent 70%),
+    url("../img/hero.webp") center 40% / cover no-repeat;
+  opacity:.9;
+}
+@media (max-width:768px){
+  .page-hero::before{background-image:
+    radial-gradient(700px 320px at 88% 10%,rgba(35,83,71,.7),transparent 70%),
+    url("../img/hero-768.webp") center 40% / cover no-repeat}
+}
+.page-hero::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(90deg,rgba(5,31,32,.97) 35%,rgba(5,31,32,.72) 100%);
+}
+.page-hero h1{color:#fff;font-size:clamp(1.9rem,4.2vw,3rem);font-weight:400;margin:.5rem 0 .5rem}
+.page-hero .lead{color:rgba(233,246,236,.86);max-width:44rem;margin:0;font-size:1.05rem}
+.page-hero-inner{position:relative;z-index:1}
+
+.breadcrumb ol{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin:0;padding:0;list-style:none}
+.breadcrumb li{display:flex;align-items:center;gap:.55rem;font-size:.72rem;
+  text-transform:uppercase;letter-spacing:.16em;color:rgba(233,246,236,.7)}
+.breadcrumb li + li::before{content:"/";color:rgba(196,160,90,.8)}
+.breadcrumb a{color:var(--ouro-500);font-weight:600}
+.breadcrumb a:hover{color:var(--menta)}
+.breadcrumb [aria-current="page"]{color:rgba(233,246,236,.95)}
+
+
+.fab-top{
+  position:fixed;right:clamp(1rem,3vw,2rem);bottom:clamp(1rem,3vw,2rem);z-index:120;
+  width:52px;height:52px;padding:0;border:1px solid rgba(196,160,90,.6);
+  border-radius:var(--raio);cursor:pointer;
+  background:var(--verde-700);color:var(--menta);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 12px 28px rgba(0,0,0,.45);
+  opacity:0;visibility:hidden;transform:translateY(14px);
+  transition:opacity .25s var(--ease),transform .25s var(--ease),
+             visibility .25s,background-color .2s var(--ease);
+}
+.fab-top.is-visible{opacity:1;visibility:visible;transform:none}
+.fab-top:hover{background:#2B6153}
+.fab-top .icon{width:22px;height:22px}
+
+/* ---------- Revelação ao rolar (escondida só com JS ativo) ---------- */
+.has-js .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.has-js .reveal.is-visible{opacity:1;transform:none}
+
+
+/* ---- Responsivo (somente blocos acima da dobra) ---- */
+@media (max-width:1280px) and (min-width:1001px){
+  .nav-cta{display:none}
+  .nav{gap:.7rem}
+  .nav-list a{padding:.6rem .5rem;font-size:.85rem}
+}
+@media (max-width:1024px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-visual .frame{transform:none}
+}
+@media (max-width:1000px){
+  .nav-toggle{display:inline-flex}
+  .nav{
+    position:absolute;left:0;right:0;top:100%;
+    flex-direction:column;align-items:stretch;gap:.6rem;
+    background:var(--verde-950);border-bottom:1px solid rgba(196,160,90,.4);
+    padding:1rem 1.25rem 1.4rem;box-shadow:var(--sombra-2);
+    display:none;
+  }
+  .nav.is-open{display:flex}
+  .nav-list{flex-direction:column;align-items:stretch;gap:.1rem}
+  .nav-list a{padding:.85rem .8rem .85rem 1.7rem;font-size:1rem;min-height:46px;display:flex;align-items:center}
+  .nav-list a::after{left:.6rem;right:auto;width:14px;bottom:calc(50% - 1px);transform-origin:left}
+  .nav-list a[aria-current="page"]{background:rgba(35,83,71,.4)}
+  .nav-cta{width:100%}
+  .brand-text span{display:none}
+}
+@media (max-width:700px){
+  .hero-actions .btn{width:100%}
+}
+@media (max-width:460px){
+  .container{width:calc(100% - 1.75rem)}
+  .brand-mark{width:44px;height:44px}
+}
+
+/* ---- Movimento reduzido ---- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+  }
+  .has-js .reveal{opacity:1;transform:none}
+}
+</style>
+<link rel="preload" as="style" href="css/styles.css?v=5" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="css/styles.css?v=5"></noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Academia de Letras de Águas Mornas",
+  "alternateName": "ALAM",
+  "slogan": "Guardiã das Letras e da memória.",
+  "foundingDate": "2018-09-22",
+  "description": "Seccional de letras de Águas Mornas (SC) dedicada à língua portuguesa, à literatura e à memória cultural de Santa Catarina.",
+  "email": "academiadeletrasdeaguasmornas@gmail.com",
+  "telephone": "+55-48-9132-4334",
+  "logo": "img/logo-alam.jpg",
+  "sameAs": ["https://www.instagram.com/academiadeletrasdeaguasmornas/"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Águas Mornas",
+    "addressRegion": "SC",
+    "addressCountry": "BR"
+  }
+}
+</script>
+<script>document.documentElement.classList.add("has-js");</script>
+</head>
+<body>
+
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- ========================= CABEÇALHO ========================= -->
+<header class="site-header" id="topo">
+  <div class="container header-inner">
+
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="img/logo-alam.webp" alt="Brasão da Academia de Letras de Águas Mornas" width="50" height="50">
+      <span class="brand-text">
+        <strong>ALAM</strong>
+        <span>Academia de Letras<br>de Águas Mornas</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu de navegação">
+      <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+
+    <nav class="nav" id="menu-principal" aria-label="Navegação principal">
+      <ul class="nav-list">
+        <li><a href="index.html" aria-current="page">Início</a></li>
+        <li><a href="sobre.html">A Academia</a></li>
+        <li><a href="academicos.html">Acadêmicos</a></li>
+        <li><a href="publicacoes.html">Publicações</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+      <a class="btn btn-ouro btn-sm nav-cta" href="eventos.html#iv-encontro">IV Encontro · 28/11</a>
+    </nav>
+
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <!-- ========================= HERO ========================= -->
+  <section class="hero" aria-labelledby="hero-titulo">
+    <div class="container hero-grid">
+
+      <div class="hero-copy">
+        <p class="eyebrow reveal">Águas Mornas &ndash; Santa Catarina &middot; desde 2018</p>
+
+        <h1 class="reveal" id="hero-titulo">Academia de Letras<br>de Águas Mornas</h1>
+
+        <p class="hero-motto reveal">&ldquo;Guardiã das Letras e da memória.&rdquo;</p>
+
+        <p class="hero-lead reveal">
+          Uma comunidade de escritores, artistas e educadores dedicada à língua portuguesa,
+          à literatura e à memória cultural de Águas Mornas e de Santa Catarina.
+        </p>
+
+        <div class="hero-actions reveal">
+          <a class="btn btn-ouro" href="sobre.html">
+            Conheça a Academia
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-linha" href="eventos.html#iv-encontro">IV Encontro das Artes &middot; 28/11/2026</a>
+        </div>
+
+        <ul class="hero-meta reveal">
+          <li>Fundada em 22 de setembro de 2018</li>
+          <li>Casa da Cultura e do Turismo</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual reveal">
+        <figure class="frame">
+          <picture><source media="(max-width:768px)" srcset="img/logo-alam-quadrado-640.webp" type="image/webp"><source srcset="img/logo-alam-quadrado.webp" type="image/webp"><img src="img/logo-alam-quadrado.jpg" alt="Brasão da Academia de Letras de Águas Mornas: igreja, serra, livro aberto, pena e louros." width="800" height="800" fetchpriority="high"></picture>
+          <figcaption>Águas Mornas &middot; Santa Catarina</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================= APRESENTAÇÃO ========================= -->
+  <section class="section" aria-labelledby="manifesto-titulo">
+    <div class="container cols-2">
+
+      <div class="reveal">
+        <p class="eyebrow">Apresentação institucional</p>
+        <h2 id="manifesto-titulo" style="font-size:clamp(1.8rem,3.6vw,2.7rem)">Uma academia para a cultura da nossa terra</h2>
+        <div class="prose">
+          <p class="lead">
+            Fundada em <strong>22 de setembro de 2018</strong>, em cerimônia no auditório da
+            Câmara de Vereadores de Águas Mornas, a Academia nasceu do encontro de idealizadores
+            que acreditavam na palavra como patrimônio do povo.
+          </p>
+          <p>
+            A Academia cultiva o vernáculo, celebra os autores da região e abre espaço para
+            novas vozes — em encontros, concursos, saraus e publicações que atravessam gerações.
+            Sob a sigla <strong>ALAM</strong>, somos conhecidos entre nós: uma casa dedicada ao
+            cultivo das letras e à memória cultural da nossa terra.
+          </p>
+          <p><a href="sobre.html">Conheça a história e a linha do tempo &rarr;</a></p>
+        </div>
+      </div>
+
+      <aside class="painel painel-claro reveal" aria-label="Lema e números da Academia">
+        <p class="eyebrow">Nossa divisa</p>
+        <blockquote class="quote-lg" style="border-left-color:var(--ouro-700);color:var(--verde-950)">
+          &ldquo;Onde a palavra guarda a memória da terra, e a memória dá à palavra o tempo eterno.&rdquo;
+          <cite style="color:var(--ouro-700)">Guardiã das Letras e da memória</cite>
+        </blockquote>
+        <hr class="rule" style="background:rgba(11,43,38,.18)">
+        <div class="mini-stats">
+          <div><span class="valor">2018</span><span class="rotulo">Ano de fundação</span></div>
+          <div><span class="valor">9</span><span class="rotulo">Patronos das primeiras cadeiras</span></div>
+          <div><span class="valor">4&ordm;</span><span class="rotulo">Edição do Encontro das Artes</span></div>
+          <div><span class="valor">424</span><span class="rotulo">Páginas de <em>Nascente de Prosa e Verso</em></span></div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- ========================= DESTINOS ========================= -->
+  <section class="section" aria-labelledby="destinos-titulo">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <p class="eyebrow">Conheça a ALAM</p>
+        <h2 id="destinos-titulo">Os pilares da Academia</h2>
+      </div>
+
+      <div class="destinos reveal">
+        <a class="destino" href="sobre.html">
+          <span class="num">01</span>
+          <div>
+            <h3>A Academia</h3>
+            <p>Quem somos, nossa missão, atuação e a trajetória de 2018 a 2026.</p>
+          </div>
+          <span class="ir">Conhecer <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+
+        <a class="destino" href="academicos.html">
+          <span class="num">02</span>
+          <div>
+            <h3>Acadêmicos</h3>
+            <p>Presidência, quadro atual, diretoria fundadora e os patronos de cada cadeira.</p>
+          </div>
+          <span class="ir">Conhecer <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+
+        <a class="destino" href="publicacoes.html">
+          <span class="num">03</span>
+          <div>
+            <h3>Publicações</h3>
+            <p>Obras da Academia, entre elas <em>Nascente de Prosa e Verso</em> (2024).</p>
+          </div>
+          <span class="ir">Conhecer <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+
+        <a class="destino" href="eventos.html">
+          <span class="num">04</span>
+          <div>
+            <h3>Eventos</h3>
+            <p>Encontros das Artes, saraus, concursos, feiras e missões culturais.</p>
+          </div>
+          <span class="ir">Conhecer <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+
+        <a class="destino" href="noticias.html">
+          <span class="num">05</span>
+          <div>
+            <h3>Notícias</h3>
+            <p>Posses, parcerias, publicações e a Academia em movimento.</p>
+          </div>
+          <span class="ir">Conhecer <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+
+        <a class="destino" href="contato.html">
+          <span class="num">06</span>
+          <div>
+            <h3>Contato</h3>
+            <p>Fale com a presidência, proponha parcerias ou participe dos nossos encontros.</p>
+          </div>
+          <span class="ir">Conhecer <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================= IV ENCONTRO ========================= -->
+  <section class="section" aria-labelledby="encontro-titulo">
+    <div class="container">
+
+      <div class="evento reveal">
+        <div>
+          <p class="eyebrow eyebrow-gold">Em evidência</p>
+          <h2 id="encontro-titulo" style="font-size:clamp(1.8rem,3.6vw,2.7rem)">IV Encontro das Artes</h2>
+          <p class="evento-frase">&ldquo;Um encontro para celebrar a arte, a cultura e os talentos da nossa terra.&rdquo;</p>
+
+          <ul class="evento-fatos">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
+              <span><strong>28 de novembro de 2026</strong><small>Sábado</small></span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span><strong>Praça da Prefeitura</strong><small>Águas Mornas &ndash; SC</small></span>
+            </li>
+          </ul>
+
+          <div class="countdown" data-countdown role="timer" aria-label="Contagem regressiva para o IV Encontro das Artes" aria-live="off">
+            <div class="countdown-cell"><span class="countdown-value" data-days>--</span><span class="countdown-label">dias</span></div>
+            <div class="countdown-cell"><span class="countdown-value" data-hours>--</span><span class="countdown-label">horas</span></div>
+            <div class="countdown-cell"><span class="countdown-value" data-minutes>--</span><span class="countdown-label">min</span></div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-ouro" href="eventos.html#iv-encontro">
+              Página do evento
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-linha" href="eventos.html">Ver toda a agenda</a>
+          </div>
+        </div>
+
+        <figure class="frame">
+          <picture><source srcset="img/convite-iv-encontro.webp" type="image/webp"><img src="img/convite-iv-encontro.jpg" data-zoom
+               alt="Convite do IV Encontro das Artes: 28 de novembro de 2026, Praça da Prefeitura, Águas Mornas — SC, com inscrições por QR Code."
+               width="900" height="1125" loading="lazy"></picture>
+          <figcaption>Convite oficial &middot; clique para ampliar</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================= ACADÊMICOS ========================= -->
+  <section class="section" aria-labelledby="academicos-titulo">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <p class="eyebrow">Acadêmicos</p>
+        <h2 id="academicos-titulo">Quem faz a Academia</h2>
+        <p class="section-lead">Presidência atual, membros em destaque e a diretoria fundadora com seus patronos.</p>
+      </div>
+
+      <div class="galeria reveal">
+        <article class="retrato">
+          <div class="moldura">
+            <div class="retrato-img" aria-hidden="true">VK</div>
+            <div class="retrato-info">
+              <span class="papel">Presidência</span>
+              <h3>Vânia Koerich</h3>
+              <p class="nota">Presidente &middot; 2025 &ndash; atual</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="retrato">
+          <div class="moldura">
+            <div class="retrato-img" aria-hidden="true">LC</div>
+            <div class="retrato-info">
+              <span class="papel">Cadeira 15</span>
+              <h3>Lucas Costa</h3>
+              <p class="nota">Membro efetivo &middot; posse em 2026</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="retrato">
+          <div class="moldura">
+            <div class="retrato-img" aria-hidden="true">SZ</div>
+            <div class="retrato-info">
+              <span class="papel">Secretária fundadora</span>
+              <h3>Salomé Pires Zemke</h3>
+              <p class="nota">Acadêmica &middot; desde 2018</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="retrato">
+          <div class="moldura">
+            <div class="retrato-img" aria-hidden="true">VV</div>
+            <div class="retrato-info">
+              <span class="papel">Acadêmico</span>
+              <h3>Valmir Vilmar</h3>
+              <p class="nota">ANACLA, ACPCC e CAPPAZ</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="reveal" style="margin-top:2.2rem">
+        <a class="btn btn-linha" href="academicos.html">Todos os acadêmicos e cadeiras</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================= TRAJETÓRIA E NÚMEROS ========================= -->
+  <section class="section" aria-labelledby="trajetoria-titulo">
+    <div class="container">
+
+      <div class="cols-2">
+        <div class="reveal">
+          <p class="eyebrow">Trajetória</p>
+          <h2 id="trajetoria-titulo" style="font-size:clamp(1.8rem,3.6vw,2.7rem)">De 2018 até aqui</h2>
+          <div class="prose">
+            <p>
+              Desde a fundação, a Academia consolidou o <strong>Encontro das Artes</strong> como
+              cartão de visitas cultural da cidade, publicou a coletânea
+              <em>Nascente de Prosa e Verso</em>, realizou o 1º Concurso de Poesias e Prosas e
+              firmou parcerias com academias de todo o estado.
+            </p>
+            <p>
+              Em 2026, a agenda se amplia com a posse de novos acadêmicos, participação na
+              3ª FLIPALHOÇA, no Sarau <em>Letras e Vozes</em> e em missão cultural a Mossoró/RN.
+            </p>
+            <p><a href="sobre.html#linha-do-tempo">Ver a linha do tempo completa &rarr;</a></p>
+          </div>
+        </div>
+
+        <div class="painel reveal">
+          <p class="eyebrow">Em números</p>
+          <ul class="numeros" style="border-top:0;flex-direction:column">
+            <li style="border-right:0;border-bottom:var(--filete-tenue);display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding-inline:0">
+              <span class="valor" style="font-size:1.7rem">2018</span>
+              <span class="rotulo" style="text-align:right">Ano de fundação</span>
+            </li>
+            <li style="border-right:0;border-bottom:var(--filete-tenue);display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding-inline:0">
+              <span class="valor" style="font-size:1.7rem">9</span>
+              <span class="rotulo" style="text-align:right">Patronos das primeiras cadeiras</span>
+            </li>
+            <li style="border-right:0;border-bottom:var(--filete-tenue);display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding-inline:0">
+              <span class="valor" style="font-size:1.7rem">4&ordm;</span>
+              <span class="rotulo" style="text-align:right">Edição do Encontro das Artes</span>
+            </li>
+            <li style="border-right:0;display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding-inline:0">
+              <span class="valor" style="font-size:1.7rem">424</span>
+              <span class="rotulo" style="text-align:right">Páginas de <em>Nascente de Prosa e Verso</em></span>
+            </li>
+          </ul>
+          <p style="margin:1.4rem 0 0"><a href="publicacoes.html">Ver as publicações &rarr;</a></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================= CHAMADA ========================= -->
+  <section class="section" aria-labelledby="cta-titulo">
+    <div class="container">
+      <div class="chamada reveal">
+        <div>
+          <h2 id="cta-titulo">Faça parte destas letras</h2>
+          <p>Quer participar de um encontro, propor uma parceria ou conhecer melhor a academia? Fale com a nossa presidência.</p>
+        </div>
+        <div class="chamada-acoes">
+          <a class="btn btn-ouro" href="contato.html">Fale com a ALAM</a>
+          <a class="btn btn-linha" href="eventos.html#iv-encontro">IV Encontro das Artes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========================= RODAPÉ ========================= -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+      <img src="img/logo-alam.webp" alt="" width="80" height="80" loading="lazy">
+      <div>
+        <strong>Academia de Letras de Águas Mornas</strong>
+        <p class="footer-motto">&ldquo;Guardiã das Letras e da memória.&rdquo;</p>
+        <p class="footer-legal">Águas Mornas &ndash; Santa Catarina &ndash; Brasil</p>
+      </div>
+    </div>
+
+    <nav class="footer-nav" aria-label="Navegação do rodapé">
+      <h2 class="footer-title">Academia</h2>
+      <ul>
+        <li><a href="sobre.html">A Academia</a></li>
+        <li><a href="academicos.html">Acadêmicos</a></li>
+        <li><a href="publicacoes.html">Publicações</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-nav footer-event" aria-label="Agenda do rodapé">
+      <h2 class="footer-title">Agenda</h2>
+      <p><strong>IV Encontro das Artes</strong><br>28 de novembro de 2026 &middot; sábado<br>Praça da Prefeitura &middot; Águas Mornas &ndash; SC</p>
+      <a class="btn btn-linha btn-sm" href="eventos.html#iv-encontro">Ver o evento</a>
+    </nav>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2026 ALAM &mdash; Academia de Letras de Águas Mornas. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="fab-top" type="button" aria-label="Voltar ao topo">
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
