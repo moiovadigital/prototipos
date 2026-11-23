@@ -151,11 +151,11 @@ svg.icon{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1
    sálvia sobre o composto ≈ 6:1, menta ≈ 14:1 */
 body::before{
   content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:url("../img/background.webp") center / cover no-repeat;
+  background:url("img/background.webp") center / cover no-repeat;
   opacity:.28;
 }
 @media (max-width:768px){
-  body::before{background-image:url("../img/background-768.webp")}
+  body::before{background-image:url("img/background-768.webp")}
 }
 
 .container{width:min(100% - 2.5rem,var(--container));margin-inline:auto}
@@ -315,7 +315,7 @@ body::before{
     background:
       radial-gradient(900px 520px at 12% 20%,rgba(35,83,71,.55),transparent 70%),
       linear-gradient(180deg,rgba(5,31,32,.86),rgba(5,31,32,.92)),
-      url("../img/hero-768.webp") center / cover no-repeat;
+      url("img/hero-768.webp") center / cover no-repeat;
   }
 }
 .hero::after{
@@ -360,13 +360,13 @@ body::before{
   content:"";position:absolute;inset:0;z-index:-1;
   background:
     radial-gradient(700px 320px at 88% 10%,rgba(35,83,71,.7),transparent 70%),
-    url("../img/hero.webp") center 40% / cover no-repeat;
+    url("img/hero.webp") center 40% / cover no-repeat;
   opacity:.9;
 }
 @media (max-width:768px){
   .page-hero::before{background-image:
     radial-gradient(700px 320px at 88% 10%,rgba(35,83,71,.7),transparent 70%),
-    url("../img/hero-768.webp") center 40% / cover no-repeat}
+    url("img/hero-768.webp") center 40% / cover no-repeat}
 }
 .page-hero::after{
   content:"";position:absolute;inset:0;z-index:-1;
