@@ -1,8 +1,11 @@
 {
-  // Config do wrangler para este repositório (diretório = raiz do site estático).
-  // Existe porque um wrangler.jsonc de Worker em E:\...\0_2026_Novembro\ é herdado
-  // como pai e faria o wrangler tratar o deploy como Worker em vez de Pages.
+  // Repo: E:\antigo-HD\0_2026_Novembro\prototipos  (git root desta pasta)
+  // Site publicado: site\  -> o Cloudflare Pages publica o CONTEÚDO dessa subpasta
+  // na raiz de prototipos.moiovadigital.com.br (AEL, AFL e ALAM ficam em /<pasta>/).
+  // Existe porque um wrangler.jsonc de Worker em ..\0_2026_Novembro\ é herdado como
+  // pai e faria o wrangler tratar o deploy como Worker em vez de Pages.
+  // Deploy:  npx wrangler pages deploy site --project-name prototipos --branch main
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "prototipos",
-  "pages_build_output_dir": "."
+  "pages_build_output_dir": "site"
 }

@@ -1,3 +1,14 @@
+# Repo = E:\antigo-HD\0_2026_Novembro\prototipos
+# Versiona APENAS o site publicado em site\.
+# Todo o resto da pasta (112 MB de material de construção: fontes de protótipo,
+# cópias, backups, referencia-visual, *.md) fica local e NUNCA vai para o GitHub
+# nem para o deploy — o uploader do Cloudflare Pages ignora só 9 padrões fixos
+# (não lê .gitignore nem .assetsignore), por isso a regra é "só o que é publicado".
+/*
+!/.gitignore
+!/wrangler.jsonc
+!/site/
+
 # cache local do wrangler (nunca versionar)
 .wrangler/
 
